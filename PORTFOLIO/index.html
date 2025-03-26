@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <title>PORTFOLIO</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            height:70px;
+            width:100%;
+           
+           border-radius: 30px;
+           
+             flex-wrap: wrap;
+             justify-content: space-around;
+             box-shadow: 0px 0px 30px #000100;
+       
+             position:fixed;
+            backdrop-filter: blur(50px);
+           top:30px;
+            opacity: 0;
+            transition: 1s ease;
+            transform: translateY(-200px);
+            z-index: 1;
+        }
+        
+        ul li{
+            list-style-type: none;
+            margin:25px;
+            color:rgb(92, 171, 250);
+            font-size: 20px;
+           
+            backdrop-filter: blur(30px);
+        }
+        ul li:hover{
+           color:red;
+            text-decoration: underline;
+        }
+        .ulclass{
+            display: flex;  
+            justify-content: flex-end;
+            
+        }
+        .home-details{
+          
+            height:250px;
+            width:150px;
+            background-color: rgb(241, 230, 215);
+            font-weight: 100;
+            color:black;
+           position: absolute;
+        }
+        .home-details{
+    display: none;
+    
+  }
+   ul li:hover .home-details{
+    display:flex;
+    position:absolute;
+    top:1.1cm;
+  border-radius:30px;
+  left:-10px;
+    margin-top:-0.5cm;
+   width:200px;
+    
+  }
+  .li-class{
+    color:black;
+    height:10px;
+  
+  }
+  .container1{
+    background-color: rgb(227, 239, 239);
+    height: 100%;
+    width:100%;
+    position: absolute;
+    overflow:hidden;
+  }
+  
+  .container2{
+    background-color: rgb(13, 237, 237);
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top:100%;
+    background-color: rgb(31, 42, 42);
+    overflow:hidden;
+  }
+  .container3{
+    background-color: rgb(1, 95, 95);
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top:200%;
+    overflow:hidden;
+  }
+  .container4{
+    bacground-color: rgb(1, 51, 51);
+    height: 120%;
+    width:100%;
+    position: absolute;
+    top:300%;
+    animation: animatio 1s ease infinite;
+    background-color: hsla(240, 15%, 9%, 1);
+  background-image: radial-gradient(
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsla(306, 100%, 57%, 1) 0px, transparent 85%);
+    overflow:hidden;
+  }
+  .container5{
+    background-color: rgb(155, 158, 243);
+    height: 45%;
+    width:100%;
+    position: absolute;
+    top:510%;
+    background-image: radial-gradient(
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, rgb(191, 172, 222) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, rgb(145, 205, 239) 0px, transparent 85%);
+    overflow:hidden;
+  }
+  
+  .container7{
+    background-color: rgb(53, 27, 249);
+    height: 110%;
+    width:100%;
+    position: absolute;
+    top:400%;
+    overflow:hidden;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  a{
+    text-decoration: none;
+    color:rgb(8, 137, 250);
+  }
+  a:hover{
+    text-decoration: none;
+    color:rgb(252, 75, 63);
+  }
+  .image-profile{
+    display:flex;
+
+  }
+  .image-profile .profile{
+    background-size: cover;
+    height:500px;
+    width:500px;
+    background-color: white;
+    filter: drop-shadow(0px 0px 10px #000100);
+    border-image-slice:  10% fill;
+ 
+   
+    margin-left: 400px;
+    margin-top:50px;
+    border-radius: 50%;
+
+  
+          
+        
+         object-fit: contain;
+        aspect-ratio: 3/2;
+         mix-blend-mode:lighten;
+         mix-blend-mode: multiply;
+         transition: 1s ease;
+    opacity: 0;
+    transform: translate(100px);
+       
+  }
+.name{
+    font-style: arial sans-serif;
+    font-size:50px;
+    
+    color:rgb(13, 10, 10);
+ height:100px;
+  width:400px;
+    position:absolute;
+    top:100px;
+    
+    left:100px;
+    transition: 1s ease;
+    opacity: 0;
+    transform: translate(100px);
+}
+
+.bsc{
+    font-style: arial sans-serif;
+    font-size:20px;
+    color:rgb(47, 44, 44);
+    text-shadow: 0px 0px 10px #036603;
+    position:absolute;
+    height: 300px;
+    width:400px;
+    top:240px;
+    left:100px;
+    transition: 1s ease;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+.button{
+  height:70px;
+  width:200px;
+    position:absolute;
+    top:430px;
+    left:120px;
+    cursor: pointer;
+    transition: 1s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(242, 199, 100);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+.button:active{
+  scale: o.92;
+}
+.button:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+
+
+.education-container{
+  display: flex;
+  flex-wrap: wrap;
+  position:absolute;
+  
+  top:130px;
+}
+
+.education1{
+ transition: 1s ease;
+  height:500px;
+  width:400px;
+backdrop-filter: blur(20px);
+  margin: 40px;
+border-radius:40px;
+
+transition: 1s ease;
+opacity: 0;
+transform: translateX(-100px);
+}
+.education1:hover{
+transform: translateY(-20px);
+}
+.education2{
+  backdrop-filter: blur(20px);
+
+  transition: 1s ease;
+ height:500px;
+ width:400px;
+
+ margin: 40px;
+border-radius:40px;
+
+transition: 1s ease;
+opacity: 0;
+transform: translateY(-100px);
+}
+.education2:hover{
+transform: translateY(20px);
+}
+.education3{
+  backdrop-filter: blur(20px);
+ 
+  transition: 1s ease;
+ height:500px;
+ width:400px;
+
+ margin: 40px;
+border-radius:40px;
+
+transition: 1s ease;
+opacity: 0;
+transform: translateX(100px);
+}
+.education3:hover{
+transform: translateY(-20px);
+}
+.education-h1{
+  position: absolute;
+ top:40px;
+  left:500px;
+  transition: 1s ease;
+opacity: 0;
+transform: translateY(100px);
+}
+.cap{
+  color:rgb(112, 112, 2);
+display:block;
+justify-content: inline;
+margin:30px;
+
+}
+.cap:hover{
+  transform: translate(30px);
+}
+
+.bsc-it{
+  margin-top:50px;
+
+  text-align: center;
+}
+.description{
+  text-align: center;
+  position: absolute;
+height:100px;
+width:300px;
+font-size:15px;
+  margin-top:30px;
+  color:grey;
+}
+.left-arrow{
+  font-size:30px;
+  color:orange;
+  position:absolute;
+  margin-top:180px;
+cursor: pointer;
+}
+.skills{
+  height:500px;
+  width:600px;
+  margin: 0 auto;
+  display:grid;
+  border: 2px solid black;
+  grid-template-columns: repeat(3,150px);
+  margin-left:200px;
+}
+.c{
+  border-radius:10%;
+  margin:20px;
+  height:150px;
+  width:150px;
+ 
+  background-size: cover;
+  background-color: grey;
+  transition: all 1s ease-in-out;
+}
+.skill-image{
+  background-size: cover;
+  height:100px;
+  width:100px;
+  margin:20px;
+mix-blend-mode: multiply;
+}
+.c:hover{
+background-image:linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+
+}
+.c1{
+  opacity:0;
+  transform:translate3d(-200px, -100px, 100px);
+  transition: 1s ease-in-out;
+}
+.c2{
+  opacity:0;
+  transform: translateY(-200px);
+  transition: 1s ease-in-out;
+}
+.c3{
+  opacity:0;
+  transform: translate3d(200px, -200px, 100px);
+  transition: 1s ease-in-out;
+}
+.c4{
+  opacity:0;
+  transform: translateX(-200px);
+  transition: 1s ease-in-out;
+}
+.c5{
+  opacity:0;
+  transform: translateY(50px);
+  transition: 1s ease-in-out;
+}
+.c6{
+  opacity:0;
+  transform: translateX(200px);
+  transition: 1s ease-in-out;
+}
+.c7{
+  opacity:0;
+  transform: translate3d(-200px, 100px, 100px);
+  transition: 1s ease-in-out;
+}
+.c8{
+  opacity:0;
+  transform: translateY(100px);
+  transition: 1s ease-in-out;
+}
+.c9{
+  opacity:0;
+  transform: translate3d(200px, 100px, 100px);
+  transition: 1s ease-in-out;
+}
+ .skill-h1{
+  font-size: 50px;
+ margin-left:300px;
+ 
+ margin-top:20px;
+ transition: 3s ease;
+opacity: 0;
+transform: translateY(100px);
+ }
+  span{
+    position:absolute;
+    height:20px;
+    width:100%;
+  color:rgb(40, 16, 16);
+  font-size:20px;
+  font-weight: bold;
+  text-align: center;
+top:150px;
+right:0px;
+ }
+ .formcontainer{
+  height:600px;
+  width:600px;
+ 
+  margin: auto;
+  position: absolute;
+  top:130px;
+  left:400px;
+backdrop-filter: blur(30px);
+border-radius: 50px;
+transition: 1s ease-in-out;
+opacity: 0;
+transform: translateY(150px);
+
+ }
+ .reveal.active{
+  opacity: 1;
+  transform: translate( 0 , 0 )!important;
+ }
+ .name{
+  transform: translateX(100px);
+ }
+ .contact-h1{
+  font-size:50px;
+  text-align:center;
+  font-weight:200;
+  color:red;
+ }
+ label{
+  -webkit-text-stroke: 0.5px rgb(228, 220, 220);
+    color: #0e0d0d;
+    font-size: 25px;
+    margin: 0 0 0 30px;
+ }
+ .form-image{
+  height: 863px;
+  width:100%;
+
+ }
+ input, textarea{
+  background-color: rgb(68, 62, 62);
+  width: 90%;
+    height: 50px;
+    border-radius: 20px;
+    margin: 10px 0 0 40px;
+    font-weight: bold;
+    color: rgb(18, 16, 16);
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+.submit{
+height:50px;
+width:100px;
+background-color:rgb(233, 48, 48);
+border-radius:30px;
+border: none;
+font-weight: bold;
+left:250px;
+position:absolute;
+cursor: pointer;
+}
+.container1-img{
+  height:100%;
+  width:100%;
+  position:inherit;
+}
+.container4-img{
+  height:100%;
+  width:100%;
+  position:inherit;
+}
+.container3-img{
+  height:100%;
+  width:100%;
+  position:inherit;
+}
+
+.graduation-image{
+  font-size:40px;
+  color:black;
+
+ 
+}
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+  width: 500px;
+  height: 500px;
+  position:relative;
+  top:50px;
+ left:900px;
+  animation: spinning82341 1.7s linear infinite;
+  text-align: center;
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+  background-color: rgb(248, 244, 244);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hobby-image2{
+  height:300px;
+  width:300px;
+  position:inherit;
+  top:100px;
+  right:100px;
+  border-radius: 50%;
+  transition: 1s ease;
+  transform: translateX(100px);
+}
+.hobby-image1{
+  height:150px;
+  width:150px;
+  position:inherit;
+top:50px;
+right:400px;
+  border-radius: 50%;
+  transition: 1s ease;
+  transform: translateY(-100px);
+}
+.hobby-image3{
+  height:100px;
+  width:100px;
+  position:inherit;
+  top:220px;
+  right:420px;
+  border-radius: 10px;
+  transition: 1s ease;
+  transform: translateX(-100px);
+}
+.hobby-image4{
+  height:200px;
+  width:200px;
+  position:inherit;
+  top:350px;
+  right:470px;
+  transition: 1s ease;
+  transform: translateX(-150px);
+
+  border-radius: 50px;
+}
+.hobby-image5{
+  height:170px;
+  width:200px;
+  top:430px;
+  right:30px;
+
+  position:inherit;
+  border-radius: 20px;
+  transition: 1s ease;
+  transform: translateX(100px);
+}
+.hobby-image6{
+  height:250px;
+  width:200px;
+  top:420px;
+right:250px;
+  position:inherit;
+  border-radius: 50px;
+  transition: 1s ease;
+  transform: translateX(100px);
+}
+.h1-hobbie{
+ font-size:50px;
+ color:rgba(250, 10, 10, 0.673);
+text-align:center;
+
+background-color: hsla(240, 15%, 9%, 1);
+  background-image: radial-gradient(
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, rgb(143, 11, 231) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, rgb(87, 24, 212) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, rgb(72, 4, 121) 0px, transparent 85%);
+
+  border-radius: 1rem;
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+
+}
+.h3-class-hobbie{
+  color: rgb(243, 100, 188);
+  margin-left:100px;
+  height:45px;
+  width:400px;
+  font-size:25px;
+  background-color: hsla(240, 15%, 9%, 1);
+  background-image: radial-gradient(
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsla(306, 100%, 57%, 1) 0px, transparent 85%);
+
+  border-radius: 1rem;
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+
+  
+  text-align:center;
+margin-top:25px;
+ padding: 0px 0px 10px;
+ opacity:0;
+ transition: all 1s ease-in-out;
+ transform: translateX(300px);
+
+}
+.h3-class-hobbie:hover , .h1-hobbie:hover{
+  background-color: white ;
+  color:blue;
+}
+.hobbie-div{
+  opacity: 0;
+  height:500px;
+  width:600px;
+  z-index: -10;
+  background-color: hsla(240, 15%, 9%, 1);
+  background-image: radial-gradient(
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsla(306, 100%, 57%, 1) 0px, transparent 85%);
+
+  border-radius: 1rem;
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+  margin:50px;
+ animation: animatio 0s ease ;
+ transform: translate3d(-100px, -100px, -400px);
+ transition: all 1s ease-in-out;
+}
+@eyframes animatio{
+    0%{
+        transition: 0.5s ease;
+        filter: hue-rotate(0deg)
+    }
+    50%{
+      transition: 0.1s ease;
+        filter: hue-rotate(90deg)
+    }
+    100%{
+        transition: 0.3s ease;
+        filter: hue-rotate(360deg)
+    }
+}
+.hobbie-div::before{
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsl(277, 95%, 60%) 40%,
+    hsl(277, 95%, 60%) 60%,
+    hsla(0, 0%, 40%, 0) 100%
+  );
+  margin:50px;
+}
+.key-skill-div{
+  height:650px;
+  width:550px;
+  position:absolute;
+  right:100px;
+bottom:0px;
+  
+  backdrop-filter: blur(20px);
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsl(274, 3%, 45%) 40%,
+    hsl(280, 14%, 88%) 60%,
+    hsla(0, 0%, 40%, 0) 100%
+  );;
+  border-radius:30px;
+  opacity:0;
+  transition: 1s ease-in;
+  transform: translate(100px);
+}
+.key-skills-h1{
+  color:rgb(244, 18, 18);
+  text-align: center;
+  overflow:hidden;
+}
+.k{
+  font-size:20px;
+  font-weight: bold;
+  height: 40px;
+  width:400px;
+  margin-left:75px;
+  border: 2px solid white;
+  text-align: center;
+  margin-top:20px;
+  border-radius:20px;
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsl(192, 88%, 43%) 40%,
+    hsl(238, 95%, 60%) 60%,
+    hsla(0, 0%, 40%, 0) 100%
+  );;
+  
+}
+.k1 ,.k3, .k5 ,.k7, .k9{
+  opacity:0;
+  transform: translate(100px);
+  transition: 0.5s ease-in;
+}
+.k2 ,.k4, .k6,.k8, .k10{
+  opacity:0;
+  transform: translate(-100px);
+  transition: 0.5s ease-in-out;
+}
+.thanks{
+  -webkit-text-stroke: 2px rgb(236, 65, 234);
+    
+font-size:40px;
+font-weight: bold;
+  text-align: center;
+  color: white;
+}
+ul {
+  list-style: none;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:100px;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 25px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 20%;
+  color: #4d4d4d;
+  background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsl(277, 95%, 60%) 40%,
+    hsl(277, 95%, 60%) 60%,
+    hsla(0, 0%, 40%, 0) 100%
+  );
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 50%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  font-size:30px;
+  width: 130px;
+  height: 50px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+.example-2 .icon-content a[data-social="spotify"] .filled,
+.example-2 .icon-content a[data-social="spotify"] ~ .tooltip {
+  background-color: #f34be5;
+  
+}
+.example-2 .icon-content a[data-social="Whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #1db954;
+}
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #4cabea;
+}
+.example-2 .icon-content a[data-social="telegram"] .filled,
+.example-2 .icon-content a[data-social="telegram"] ~ .tooltip {
+  background-color: #0088cc;
+}
+.fa-brands{
+ 
+  font-size:50px;
+  font-weight: bold;;
+}
+.a{
+color:rgb(231, 38, 245)
+}
+.b{
+color:rgb(151, 245, 151)
+}
+.new-c{
+color:rgb(142, 142, 242)
+}
+.d{
+color:rgb(38, 186, 236)
+}
+.footer{
+  height:300px;
+  width:100%;
+   
+    position: absolute;
+    top:550%;
+    background-image: linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0) 0%,
+    hsl(277, 95%, 60%) 40%,
+    hsl(277, 95%, 60%) 60%,
+    hsla(0, 0%, 40%, 0) 100%
+  );
+}
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container1">
+          <img class="container1-img" src=" portfolio-background">
+    <div class="header reveal">
+        <ul class="ulclass">
+            <li class="home">Home
+                
+                    <div class="home-details">
+                        <ul>
+                        <li class="li-class">Contacts</li><hr>
+                        <li  class="li-class">Courses</li><hr>
+                        <li class="li-class">Whatsapp Contact</li><hr>
+                        <li class="li-class">Details</li>
+                    </ul>
+                    </div>
+                
+            </li>
+            <li><a  href="#CONTAINER2">Education</a></li>
+            <li><a href="#container3">Skills</a></li>
+            <li><a href="#container4" >Results</a></li>
+            <li><a href="#container5">Web Development</a></li>
+            <li><a href="#container6">My Projects</a></li>
+            <li><a href="#container7">Contact</a></li>
+        </ul>
+    </div>
+<div class="image-profile reveal">
+    <div class="detials-content">
+        <h1 class="name reveal" style="font-size:40px;">Hello There!</h1>
+        <span class="iam"  style="font-size: 30px;width:300px;height:100px;position:absolute;top:160px; left:-50px;">I Am </span>
+        <b class="reveal rohan-name" style="color:red; font-size: 40px;width:300px;height:100px;position:absolute;top:150px; left:150px;"> Rohan Gupta </b>
+        
+        <h3 class="bsc reveal">Hello!, I'm here to represent a short Introduction of myself. Myself, Rohan Gupta Rakesh , I am a Student and I'm Pursuing BSC IT Course and I'm here to give an Opportunity to myself to respresent my own skills with you all . Please Scroll over to get more information</h3>
+        <button class="button reveal"><a style="color:black" href="#about-me">MOre About Me</a></button>
+    </div>
+    <div class="spinner reveal">
+      <div class="spinner1 reveal"></div>
+    </div>
+<img class="profile reveal" src="profilephoto.jpeg"></div>
+
+</div>
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js">
+    </script>
+    <script>
+      /*document.getElementById('loginForm').addEventListener('submit', function(e) {
+          e.preventDefault(); // Prevent form from submitting
+          document.getElementById('flipCard').classList.add('flipped');
+      });*/
+     
+      
+  </script>
+  <div class="container2" ID="CONTAINER2">
+    <img class="container3-img" src="background-image5.jpeg">
+    
+    <h1 class="education-h1 reveal" style="color:rgb(245, 241, 241); font-size:50px; font-style:arial sans-serif; font-weight: bold;">MY <b style="color:red; font-size:50px; font-style:arial sans-serif; font-weight: bold;">EDUCATION</b></h1>
+    
+ <div class="education-container">
+<div class="education1 reveal">
+  <div class="cap">
+    <!--<img class="graduation-image"   src=" graduation-image-of-cap.jpg"></img>-->
+    <i class="fa fa-graduation-cap graduation-image" aria-hidden="true"></i>
+    <h1 class="bsc-it">Bachelor of Science in Information Technology</h1>
+    <description class="description"> Hello, You Completed Third Page of my Website! Thank You. I Pursued this course from BNN College, Thane (Bhiwandi 421302). I Graduated in the year of 2025-2026.  </description>
+    <i class="fa fa-arrow-right  left-arrow" aria-hidden="true"></i>
+  </div>
+  </div>
+  <div class="education2 reveal">
+    <div class="cap">
+     <!-- <img class="graduation-image"   src=" graduation-image-of-cap.jpg"></img>-->
+     <i class="fa fa-graduation-cap graduation-image" aria-hidden="true"></i>
+      <h1 class="bsc-it"> About 10TH </h1>
+      <description class="description"> Hello, I Studied 10th i.e. SSC from Dr. Omprakash Agarwal English National School, Situated in Thane MUMBAI .I Scored total 96% in SSC Board Examination, I choosed my carrerr after SSC in Technologies. At all , SSC done in the Year of 2020-2021.   </description>
+      <i class="fa fa-arrow-right left-arrow" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="education3 reveal">
+    <div class="cap">
+    <!--   <img class="graduation-image"   src=" graduation-image-of-cap.jpg"></img>-->
+      <i class="fa fa-graduation-cap graduation-image" aria-hidden="true"></i>
+      <h1 class="bsc-it"> About 12TH </h1>
+      <description class="description"> Hello, I Studied 12th i.e. HSC from BNN COLLWGE, Situated in thane MUMBAI (Maharashtra).At all , HSC done in the Year of 2020-2021.   </description>
+      <i class="fa fa-arrow-right  left-arrow" aria-hidden="true"></i>
+    </div>
+  </div>
+ </div>
+  </div>
+    <div class="container3" id="container3">
+     
+      
+      <img class="container4-img" src="background-image4.jpeg">
+        <h1 class="skill-h1 reveal">MY <b style="color:red">SKILLS</b></h1>
+        <div class="skills">
+          <div class="c reveal c1"><img class="skill-image " src="C_language.jpeg"><span>C language</span></div>
+          <div class="c  reveal c2">
+            <img class="skill-image" src="C++.jpeg">
+            <span>C++ language</span>
+          </div>
+          <div class="c  reveal c3"><img class="skill-image" src="java.jpeg"><span>JAVA </span></div>
+          <div class="c  reveal c4"><img class="skill-image" src="html-language.jpeg"><span>HTML</span></div>
+          <div class="c  reveal c5"><img class="skill-image" src="css.jpeg"><span>CSS</span></div>
+          <div class="c  reveal c6"><img class="skill-image" src="javascript.jpeg"><span>JAVASCRIPT </span></div>
+          <div class="c  reveal c7"><img class="skill-image" src="mongodb.jpeg"><span>SQL</span></div>
+          <div class="c  reveal c8"><img class="skill-image" src="mongodb.jpeg"><span>MONGO-DB</span></div>
+          <div class="c  reveal c9"><img class="skill-image" src="mongodb.jpeg"><span>PHP</span></div>
+        </div>
+        <div class="key-skills reveal">
+          <div class="key-skill-div reveal">
+          <h1 class="key-skills-h1 reveal">Key Skills</h1>
+          <div class="keys">
+          <h1 class="k1 k reveal">Communication</h1>
+          <h1 class="k2 k reveal">Problem Solving</h1>
+          <h1 class="k3 k reveal">Leadership</h1>
+          <h1 class="k4 k reveal">Active Listening</h1>
+          <h1 class="k5 k reveal">InterPersonal Communication</h1>
+          <h1 class="k6 k reveal">Skills Management</h1>
+          <h1 class="k7 k reveal">Teamwork</h1>
+          <h1 class="k8 k reveal">Time Management</h1>
+          <h1 class="k9 k reveal">Creativity</h1>
+        </div></div>
+        </div>
+    </div>
+    <div class="container4" id="container4">
+       <img class="hobby-image1 reveal " src="programming-images.jpeg">
+      <img class="hobby-image2  reveal" src="hobbie-background-image.jpeg">
+      <img class="hobby-image3  reveal" src="painting-image.jpeg">
+      <img class="hobby-image4  reveal" src=" programming-image1.jpeg">
+      <img class="hobby-image5  reveal" src=" programming-image2.jpeg">
+      <img class="hobby-image6  reveal" src=" programming-image4.jpeg">
+   
+    <div class="hobbie-div reveal">
+      <h1 class="h1-hobbie  reveal">Hobbies</h1>
+     <h3 class="h3-class-hobbie  reveal a">Badminton Player</h3>
+     <h3 class="h3-class-hobbie  reveal b">Software Engineer</h3>
+     <h3 class="h3-class-hobbie  reveal c">Paintings</h3>
+     <h3 class="h3-class-hobbie  reveal d">Re-Searcher</h3>
+     <h3 class="h3-class-hobbie  reveal e">Learning</h3>
+     <h3 class="h3-class-hobbie  reveal  f">Writing</h3>
+    </div>
+    </div>
+    <div class="container7" id="container7">
+      <div class="image">
+        <img class="form-image" src=" background-image2">
+      </div>
+      <div class="formcontainer reveal">
+        <h1 class="contact-h1"> Contact </h1>
+   <form>
+   <div class="input1">
+    <label for="input1">Name of the Contacter</label><br>
+    <input type="text" placeholder="Name" name="text">
+   </div> 
+   <div class="input1">
+    <label for="input1">Share me Your Contact No.</label><br>
+    <input type="contact-no" placeholder="Number" name="number">
+   </div> 
+   <div class="input1">
+    <label for="input1">Share me Your Thoughts</label><br>
+      <textarea name="thoughts" id="text-area" placeholder="Your Thoughts" row="3"  columns="3"></textarea>
+   </div> 
+   <div class="input1">
+    <label for="input1">Address</label><br>
+      <textarea name="thoughts" id="text-area" placeholder="Address" row="3"  columns="3"></textarea>
+   </div> 
+   <div class="agree">
+    <label for="agree">Your Questions</label><br>
+    <textarea name="thoughts" id="text-area" placeholder="Questions" row="3"  columns="3"></textarea>
+   </div>
+   <button class="submit">Submit</button>
+   </form>
+  </div>
+    </div></div>
+
+
+    <div class="container5" id="container5">
+       <h1 class="thanks">Online Communities</h1>
+       
+       <ul class="example-2">
+        <li class="icon-content">
+          <a
+            href="https://www.spotify.com/"
+            aria-label="Spotify"
+            data-social="spotify"
+          >
+            <div class="filled"></div>
+            <i class="fa-brands fa-instagram a"></i>
+          </a>
+          <div class="tooltip">Instagram</div>
+        </li>
+        <li class="icon-content">
+          <a
+            href="https://www.Whatsapp.com/"
+            aria-label="Whatsapp"
+            data-social="Whatsapp"
+          >
+            <div class="filled"></div>
+           
+            <i class="fa-brands fa-whatsapp b"></i>
+          </a>
+          <div class="tooltip">Whatsapp</div>
+        </li>
+        <li class="icon-content">
+          <a
+            href="https://linkedin.com/"
+            aria-label="linkedin"
+            data-social="linkedin"
+          >
+            <div class="filled"></div>
+             <i class=" new-c fa-brands  fa-linkedin "></i>
+          </a>
+          <div class="tooltip">Linkedin</div>
+        </li>
+        <li class="icon-content">
+          <a
+            href="https://telegram.org/"
+            aria-label="Telegram"
+            data-social="telegram"
+          >
+            <div class="filled"></div>
+            <i class="fa-brands fa-telegram d"></i>
+          </a>
+
+          <div class="tooltip">Telegram</div>
+        </li>
+      </ul>
+      
+    </div>
+    <div class="footer">
+<h1 class="thanks" id="element" style="margin-top:100px; font-size:70px; color:rgb(248, 89, 232);-webkit-text-stroke: 2px rgb(249, 48, 33);"></h1>
+    </div>
+   
+<script>
+  const boxes = document.querySelectorAll('.reveal');
+
+  function checkBoxes() {
+      const triggerBottom = window.innerHeight / 5 * 4;
+
+      boxes.forEach(box => {
+          const boxTop = box.getBoundingClientRect().top;
+          
+          if (boxTop < triggerBottom) {
+              box.classList.add('active');
+          } else {
+              box.classList.remove('active');
+          }
+      });
+  }
+
+  window.addEventListener('scroll', checkBoxes);
+  checkBoxes(); // Check initial state*/
+
+
+  var typed = new Typed('#element', {
+        strings : ['Thanks for Watching'],
+       
+        typeSpeed : 50,
+        loop: true
+      });
+
+  /*function revealitems() {
+    const items = document.querySelectorAll('.reveal');
+
+    items.forEach((item , index) => {
+        setTimeout(() => {
+          item.classList.add('active');
+        }, index * 200);
+    });
+  }
+  window.addEventListener('load', revealitems);*/
+</script>
+</body>
+</html>
